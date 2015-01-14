@@ -235,16 +235,11 @@ function enable_translation($enable=true){
 
 $translation_namespace = "";
 $translation_namespace_stack = array();
+$translator = new Translator();
 function tlschema($schema=false){
-	global $translation_namespace,$translation_namespace_stack,$REQUEST_URI;
-	if ($schema===false){
-		$translation_namespace = array_pop($translation_namespace_stack);
-		if ($translation_namespace=="")
-			$translation_namespace = translator_uri($REQUEST_URI);
-	}else{
-		array_push($translation_namespace_stack,$translation_namespace);
-		$translation_namespace = $schema;
-	}
+	global $translator;
+	$translator->tlschema($schema);
+
 }
 
 function translator_check_collect_texts()

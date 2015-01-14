@@ -2,16 +2,11 @@
 // translator ready
 // addnews ready
 // mail ready
+$httpClass = new Http();
 
 function httpget($var){
-
-	global $HTTP_GET_VARS;
-
-	$res = isset($_GET[$var]) ? $_GET[$var] : false;
-	if ($res === false) {
-		$res = isset($HTTP_GET_VARS[$var]) ? $HTTP_GET_VARS[$var] : false;
-	}
-	return $res;
+	global $httpClass;
+	return $httpClass->httpged($var);
 }
 
 function httpallget() {
