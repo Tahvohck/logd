@@ -2,7 +2,9 @@
 // translator ready
 // addnews ready
 // mail ready
+
 function httpget($var){
+
 	global $HTTP_GET_VARS;
 
 	$res = isset($_GET[$var]) ? $_GET[$var] : false;

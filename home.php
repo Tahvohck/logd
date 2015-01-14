@@ -2,6 +2,8 @@
 // translator ready
 // addnews ready
 // mail ready
+require_once __DIR__.'/vendor/autoload.php';
+require_once("common.php");
 
 if (isset($_POST['template'])){
 	$skin = $_POST['template'];
@@ -12,8 +14,8 @@ if (isset($_POST['template'])){
 }
 
 define("ALLOW_ANONYMOUS",true);
-require_once("common.php");
-require_once("lib/http.php");
+
+
 
 
 if (!isset($session['loggedin'])) $session['loggedin']=false;
