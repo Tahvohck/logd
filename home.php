@@ -1,4 +1,6 @@
 <?php
+error_reporting(-1);
+ini_set('display_errors','On');
 // translator ready
 // addnews ready
 // mail ready

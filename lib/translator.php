@@ -2,6 +2,7 @@
 // translator ready
 // addnews ready
 // mail ready
+$translator = new Translator();
 
 function translator_setup(){
 	//Determine what language to use
@@ -208,6 +209,8 @@ function tlbutton_push($indata,$hot=false,$namespace=FALSE){
 }
 
 function tlbutton_pop(){
+	global $translator;
+	return $translator->tlbutton_pop();
 	global $translatorbuttons,$session;
 	if ($session['user']['superuser'] & SU_IS_TRANSLATOR){
 		return array_pop($translatorbuttons);
@@ -235,7 +238,7 @@ function enable_translation($enable=true){
 
 $translation_namespace = "";
 $translation_namespace_stack = array();
-$translator = new Translator();
+
 function tlschema($schema=false){
 	global $translator;
 	$translator->tlschema($schema);
