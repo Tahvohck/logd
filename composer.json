@@ -8,5 +8,8 @@
       "name": "Witali Mik",
       "email": "witalimik@web.de"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": { "": "lib/" }
+  }
 }
